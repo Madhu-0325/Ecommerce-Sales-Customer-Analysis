@@ -1,0 +1,3 @@
+expression DataFile = "D:/Ecommerce_sales_customer_analysis/data/Ecommerce_sales.csv" meta [IsParameterQuery=true, Type="Text", IsParameterQueryRequired=true]
+
+	annotation PBI_ResultType = Text

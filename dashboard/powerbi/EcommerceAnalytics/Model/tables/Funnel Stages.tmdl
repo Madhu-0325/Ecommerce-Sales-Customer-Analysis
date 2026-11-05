@@ -1,0 +1,26 @@
+table 'Funnel Stages'
+
+	column Stage
+		dataType: string
+		sortByColumn: 'Sort Order'
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Stage]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Sort Order'
+		dataType: int64
+		isHidden
+		formatString: 0
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Sort Order]
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Funnel Stages' = calculated
+		mode: import
+		source = DATATABLE ( "Stage", STRING, "Sort Order", INTEGER, { { "Sessions", 1 }, { "Added to Cart", 2 }, { "Purchased", 3 } } )
+
+	annotation PBI_ResultType = Table

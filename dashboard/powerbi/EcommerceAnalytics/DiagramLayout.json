@@ -1,0 +1,45 @@
+{
+  "version": "1.1.0",
+  "diagrams": [
+    {
+      "ordinal": 0,
+      "scrollPosition": {
+        "x": 0,
+        "y": 0
+      },
+      "nodes": [
+        {
+          "location": {
+            "x": 80,
+            "y": 80
+          },
+          "nodeIndex": "ecommerce_sales",
+          "size": {
+            "height": 320,
+            "width": 260
+          },
+          "zIndex": 1
+        },
+        {
+          "location": {
+            "x": 400,
+            "y": 80
+          },
+          "nodeIndex": "Funnel Stages",
+          "size": {
+            "height": 120,
+            "width": 240
+          },
+          "zIndex": 2
+        }
+      ],
+      "name": "All tables",
+      "zoomValue": 90,
+      "pinKeyFieldsToTop": false,
+      "showExtraHeaderInfo": false,
+      "hideKeyFieldsWhenCollapsed": false
+    }
+  ],
+  "selectedDiagram": "All tables",
+  "defaultDiagram": "All tables"
+}

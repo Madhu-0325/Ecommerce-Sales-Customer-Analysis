@@ -1,0 +1,41 @@
+{
+  "version": "5.25",
+  "themeCollection": {
+    "customTheme": {
+      "name": "midnight-analytics.json",
+      "version": "5.22",
+      "type": 1
+    }
+  },
+  "activeSectionIndex": 0,
+  "defaultDrillFilterOtherVisuals": true,
+  "settings": {
+    "useStylableVisualContainerHeader": true,
+    "exportDataMode": 1,
+    "useNewFilterPaneExperience": true,
+    "allowChangeFilterTypes": true,
+    "allowDataPointLassoSelect": true
+  },
+  "objects": {
+    "outspacePane": [
+      {
+        "properties": {
+          "expanded": {
+            "expr": {
+              "Literal": {
+                "Value": "false"
+              }
+            }
+          },
+          "visible": {
+            "expr": {
+              "Literal": {
+                "Value": "false"
+              }
+            }
+          }
+        }
+      }
+    ]
+  }
+}

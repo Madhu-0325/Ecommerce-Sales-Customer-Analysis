@@ -1,0 +1,70 @@
+{
+  "name": "ded40f2a77c30efc6062",
+  "layouts": [
+    {
+      "id": 0,
+      "position": {
+        "x": 32,
+        "y": 696,
+        "z": 1300,
+        "width": 760,
+        "height": 16,
+        "tabOrder": 1300
+      }
+    }
+  ],
+  "singleVisual": {
+    "visualType": "textbox",
+    "drillFilterOtherVisuals": true,
+    "objects": {
+      "general": [
+        {
+          "properties": {
+            "paragraphs": [
+              {
+                "textRuns": [
+                  {
+                    "value": "Source: Ecommerce_sales.csv  |  25,000 sessions  |  Jan 1 - Dec 30, 2024",
+                    "textStyle": {
+                      "fontSize": "7.5pt",
+                      "color": "#64748B",
+                      "fontFamily": "Segoe UI"
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "vcObjects": {
+      "background": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "visualHeader": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ]
+    }
+  }
+}

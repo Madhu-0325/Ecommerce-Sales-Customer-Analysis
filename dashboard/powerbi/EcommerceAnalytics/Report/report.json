@@ -1,0 +1,61 @@
+{
+  "id": 64520000,
+  "layoutOptimization": 0,
+  "pods": [
+    {
+      "boundSection": "ReportSectionc07d5bb6481a431f2fda",
+      "config": "{}",
+      "id": 64520000,
+      "name": "Pod0",
+      "objectId": "00000000-0000-0000-0000-000064520000",
+      "type": 1
+    },
+    {
+      "boundSection": "ReportSection2fc1ebae804124041f02",
+      "config": "{}",
+      "id": 64520001,
+      "name": "Pod1",
+      "objectId": "00000000-0000-0000-0000-000064520001",
+      "type": 1
+    },
+    {
+      "boundSection": "ReportSection5129670cb01a851d770e",
+      "config": "{}",
+      "id": 64520002,
+      "name": "Pod2",
+      "objectId": "00000000-0000-0000-0000-000064520002",
+      "type": 1
+    },
+    {
+      "boundSection": "ReportSectiond687ab009a3422ec1f64",
+      "config": "{}",
+      "id": 64520003,
+      "name": "Pod3",
+      "objectId": "00000000-0000-0000-0000-000064520003",
+      "type": 1
+    }
+  ],
+  "publicCustomVisuals": [],
+  "reportId": 64520001,
+  "resourcePackages": [
+    {
+      "resourcePackage": {
+        "id": 64520002,
+        "items": [
+          {
+            "id": 64520003,
+            "name": "midnight-analytics.json",
+            "path": "midnight-analytics.json",
+            "resourcePackageId": 64520002,
+            "resourcePackageItemBlobInfoId": 64520004,
+            "type": 100
+          }
+        ],
+        "name": "RegisteredResources",
+        "reportId": 64520001,
+        "type": 1
+      }
+    }
+  ],
+  "theme": "midnight-analytics.json"
+}

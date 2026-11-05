@@ -1,0 +1,71 @@
+{
+  "name": "2864512e4161ae21b145",
+  "layouts": [
+    {
+      "id": 0,
+      "position": {
+        "x": 32,
+        "y": 25,
+        "z": 1101,
+        "width": 680,
+        "height": 34,
+        "tabOrder": 1101
+      }
+    }
+  ],
+  "singleVisual": {
+    "visualType": "textbox",
+    "drillFilterOtherVisuals": true,
+    "objects": {
+      "general": [
+        {
+          "properties": {
+            "paragraphs": [
+              {
+                "textRuns": [
+                  {
+                    "value": "Customer Analysis",
+                    "textStyle": {
+                      "fontSize": "21pt",
+                      "color": "#F8FAFC",
+                      "fontFamily": "Segoe UI Semibold",
+                      "fontWeight": "bold"
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "vcObjects": {
+      "background": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "visualHeader": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ]
+    }
+  }
+}

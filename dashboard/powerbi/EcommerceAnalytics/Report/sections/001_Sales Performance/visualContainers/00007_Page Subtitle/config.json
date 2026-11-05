@@ -1,0 +1,70 @@
+{
+  "name": "3313e7ffc49b4a9b5d62",
+  "layouts": [
+    {
+      "id": 0,
+      "position": {
+        "x": 32,
+        "y": 61,
+        "z": 1102,
+        "width": 720,
+        "height": 18,
+        "tabOrder": 1102
+      }
+    }
+  ],
+  "singleVisual": {
+    "visualType": "textbox",
+    "drillFilterOtherVisuals": true,
+    "objects": {
+      "general": [
+        {
+          "properties": {
+            "paragraphs": [
+              {
+                "textRuns": [
+                  {
+                    "value": "Revenue, order volume and channel contribution across the year.",
+                    "textStyle": {
+                      "fontSize": "8.5pt",
+                      "color": "#94A3B8",
+                      "fontFamily": "Segoe UI"
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "vcObjects": {
+      "background": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "visualHeader": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ]
+    }
+  }
+}

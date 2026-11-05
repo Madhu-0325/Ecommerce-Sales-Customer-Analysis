@@ -1,0 +1,16 @@
+model Model
+	culture: en-US
+	defaultPowerBIDataSourceVersion: powerBI_V3
+	sourceQueryCulture: en-US
+	dataAccessOptions
+		legacyRedirects
+		returnErrorValuesAsNull
+
+annotation __PBI_TimeIntelligenceEnabled = 0
+
+annotation PBIDesktopVersion = 2.159.883.0 (25.08)
+
+annotation PBI_QueryOrder = ["DataFile","ecommerce_sales","Funnel Stages"]
+
+ref table ecommerce_sales
+ref table 'Funnel Stages'

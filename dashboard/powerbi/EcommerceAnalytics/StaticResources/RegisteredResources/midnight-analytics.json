@@ -1,0 +1,38 @@
+{
+  "name": "Midnight Analytics",
+  "dataColors": [
+    "#3B82F6",
+    "#22D3EE",
+    "#A855F7",
+    "#F59E0B",
+    "#10B981",
+    "#EF4444",
+    "#6366F1",
+    "#14B8A6"
+  ],
+  "background": "#0B1220",
+  "foreground": "#E2E8F0",
+  "tableAccent": "#3B82F6",
+  "textClasses": {
+    "title": {
+      "fontFace": "Segoe UI Semibold",
+      "fontSize": 14,
+      "color": "#E2E8F0"
+    },
+    "header": {
+      "fontFace": "Segoe UI Semibold",
+      "fontSize": 11,
+      "color": "#E2E8F0"
+    },
+    "label": {
+      "fontFace": "Segoe UI",
+      "fontSize": 9,
+      "color": "#94A3B8"
+    },
+    "callout": {
+      "fontFace": "Segoe UI Semibold",
+      "fontSize": 28,
+      "color": "#F8FAFC"
+    }
+  }
+}

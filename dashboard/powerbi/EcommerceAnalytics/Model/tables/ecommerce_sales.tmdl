@@ -1,0 +1,412 @@
+table ecommerce_sales
+
+	column customer_id
+		dataType: int64
+		formatString: 0
+		summarizeBy: none
+		sourceColumn: customer_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column session_id
+		dataType: int64
+		formatString: 0
+		summarizeBy: none
+		sourceColumn: session_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column visit_date
+		dataType: dateTime
+		formatString: Short Date
+		summarizeBy: none
+		sourceColumn: visit_date
+
+		annotation SummarizationSetBy = Automatic
+
+	column device_type
+		dataType: int64
+		formatString: 0
+		summarizeBy: none
+		sourceColumn: device_type
+
+		annotation SummarizationSetBy = Automatic
+
+	column user_type
+		dataType: int64
+		formatString: 0
+		summarizeBy: none
+		sourceColumn: user_type
+
+		annotation SummarizationSetBy = Automatic
+
+	column marketing_channel
+		dataType: int64
+		formatString: 0
+		summarizeBy: none
+		sourceColumn: marketing_channel
+
+		annotation SummarizationSetBy = Automatic
+
+	column product_id
+		dataType: int64
+		formatString: 0
+		summarizeBy: none
+		sourceColumn: product_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column product_category
+		dataType: int64
+		formatString: 0
+		summarizeBy: none
+		sourceColumn: product_category
+
+		annotation SummarizationSetBy = Automatic
+
+	column unit_price
+		dataType: double
+		formatString: #,0.00
+		summarizeBy: none
+		sourceColumn: unit_price
+
+		annotation SummarizationSetBy = Automatic
+
+	column quantity
+		dataType: int64
+		formatString: #,0
+		summarizeBy: sum
+		sourceColumn: quantity
+
+		annotation SummarizationSetBy = Automatic
+
+	column discount_percent
+		dataType: int64
+		formatString: #,0
+		summarizeBy: none
+		sourceColumn: discount_percent
+
+		annotation SummarizationSetBy = Automatic
+
+	column discount_amount
+		dataType: double
+		formatString: #,0.00
+		summarizeBy: sum
+		sourceColumn: discount_amount
+
+		annotation SummarizationSetBy = Automatic
+
+	column revenue
+		dataType: double
+		formatString: #,0.00
+		summarizeBy: sum
+		sourceColumn: revenue
+
+		annotation SummarizationSetBy = Automatic
+
+	column pages_viewed
+		dataType: int64
+		formatString: #,0
+		summarizeBy: sum
+		sourceColumn: pages_viewed
+
+		annotation SummarizationSetBy = Automatic
+
+	column time_on_site_sec
+		dataType: int64
+		formatString: #,0
+		summarizeBy: sum
+		sourceColumn: time_on_site_sec
+
+		annotation SummarizationSetBy = Automatic
+
+	column added_to_cart
+		dataType: int64
+		formatString: #,0
+		summarizeBy: sum
+		sourceColumn: added_to_cart
+
+		annotation SummarizationSetBy = Automatic
+
+	column purchased
+		dataType: int64
+		formatString: #,0
+		summarizeBy: sum
+		sourceColumn: purchased
+
+		annotation SummarizationSetBy = Automatic
+
+	column cart_abandoned
+		dataType: int64
+		formatString: #,0
+		summarizeBy: sum
+		sourceColumn: cart_abandoned
+
+		annotation SummarizationSetBy = Automatic
+
+	column rating
+		dataType: int64
+		formatString: 0
+		summarizeBy: average
+		sourceColumn: rating
+
+		annotation SummarizationSetBy = Automatic
+
+	column review_text
+		dataType: int64
+		formatString: 0
+		summarizeBy: none
+		sourceColumn: review_text
+
+		annotation SummarizationSetBy = Automatic
+
+	column review_helpful_votes
+		dataType: int64
+		formatString: #,0
+		summarizeBy: sum
+		sourceColumn: review_helpful_votes
+
+		annotation SummarizationSetBy = Automatic
+
+	column payment_method
+		dataType: int64
+		formatString: 0
+		summarizeBy: none
+		sourceColumn: payment_method
+
+		annotation SummarizationSetBy = Automatic
+
+	column visit_day
+		dataType: int64
+		formatString: 0
+		summarizeBy: none
+		sourceColumn: visit_day
+
+		annotation SummarizationSetBy = Automatic
+
+	column visit_month
+		dataType: int64
+		formatString: 0
+		summarizeBy: none
+		sourceColumn: visit_month
+
+		annotation SummarizationSetBy = Automatic
+
+	column visit_weekday
+		dataType: int64
+		formatString: 0
+		summarizeBy: none
+		sourceColumn: visit_weekday
+
+		annotation SummarizationSetBy = Automatic
+
+	column visit_season
+		dataType: int64
+		formatString: 0
+		summarizeBy: none
+		sourceColumn: visit_season
+
+		annotation SummarizationSetBy = Automatic
+
+	column session_duration_bucket
+		dataType: string
+		summarizeBy: none
+		sourceColumn: session_duration_bucket
+
+		annotation SummarizationSetBy = Automatic
+
+	column revenue_normalized
+		dataType: double
+		formatString: #,0.0000
+		summarizeBy: none
+		sourceColumn: revenue_normalized
+
+		annotation SummarizationSetBy = Automatic
+
+	column location
+		dataType: int64
+		formatString: 0
+		summarizeBy: none
+		sourceColumn: location
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Month Start' = DATE ( YEAR ( ecommerce_sales[visit_date] ), MONTH ( ecommerce_sales[visit_date] ), 1 )
+		formatString: MMM YYYY
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Month' = FORMAT ( ecommerce_sales[visit_date], "MMM YYYY" )
+		sortByColumn: 'Month Start'
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Category' = "Category " & FORMAT ( ecommerce_sales[product_category], "0" )
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Channel' = "Channel " & FORMAT ( ecommerce_sales[marketing_channel], "0" )
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Device' = "Device " & FORMAT ( ecommerce_sales[device_type], "0" )
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'User Type' = "User Type " & FORMAT ( ecommerce_sales[user_type], "0" )
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Payment Method' = "Payment Method " & FORMAT ( ecommerce_sales[payment_method], "0" )
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Season' = "Season " & FORMAT ( ecommerce_sales[visit_season], "0" )
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Purchased Label' = IF ( ecommerce_sales[purchased] = 1, "Purchased", "Not Purchased" )
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Customer Type' = ```
+			VAR PurchasesForCustomer =
+			    CALCULATE (
+			        SUM ( ecommerce_sales[purchased] ),
+			        ALLEXCEPT ( ecommerce_sales, ecommerce_sales[customer_id] )
+			    )
+			RETURN
+			    SWITCH (
+			        TRUE (),
+			        PurchasesForCustomer > 1, "Repeat Buyer",
+			        PurchasesForCustomer = 1, "One-Time Buyer",
+			        "Non-Buyer"
+			    )
+			```
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	measure 'Total Revenue' = SUM ( ecommerce_sales[revenue] )
+		formatString: #,0.00
+
+	measure 'Total Purchases' = SUM ( ecommerce_sales[purchased] )
+		formatString: #,0
+
+	measure 'Total Sessions' = COUNTROWS ( ecommerce_sales )
+		formatString: #,0
+
+	measure 'Conversion Rate' = DIVIDE ( [Total Purchases], [Total Sessions] )
+		formatString: 0.0%
+
+	measure 'Average Order Value' = DIVIDE ( [Total Revenue], [Total Purchases] )
+		formatString: #,0.00
+
+	measure 'Unique Customers' = DISTINCTCOUNT ( ecommerce_sales[customer_id] )
+		formatString: #,0
+
+	measure 'Buying Customers' = CALCULATE ( DISTINCTCOUNT ( ecommerce_sales[customer_id] ), ecommerce_sales[purchased] = 1 )
+		formatString: #,0
+
+	measure 'Repeat Customers' = ```
+			VAR CustomerPurchases =
+			    ADDCOLUMNS (
+			        VALUES ( ecommerce_sales[customer_id] ),
+			        "@Purchases", CALCULATE ( SUM ( ecommerce_sales[purchased] ) )
+			    )
+			RETURN
+			    COUNTROWS ( FILTER ( CustomerPurchases, [@Purchases] > 1 ) )
+			```
+		formatString: #,0
+
+	measure 'Repeat Customer Rate' = DIVIDE ( [Repeat Customers], [Buying Customers] )
+		formatString: 0.0%
+
+	measure 'Add to Cart Sessions' = SUM ( ecommerce_sales[added_to_cart] )
+		formatString: #,0
+
+	measure 'Abandoned Carts' = SUM ( ecommerce_sales[cart_abandoned] )
+		formatString: #,0
+
+	measure 'Cart Abandonment Rate' = DIVIDE ( [Abandoned Carts], [Add to Cart Sessions] )
+		formatString: 0.0%
+
+	measure 'Cart Purchase Rate' = DIVIDE ( [Total Purchases], [Add to Cart Sessions] )
+		formatString: 0.0%
+
+	measure 'Avg Time on Site (min)' = DIVIDE ( AVERAGE ( ecommerce_sales[time_on_site_sec] ), 60 )
+		formatString: #,0.0
+
+	measure 'Avg Pages Viewed' = AVERAGE ( ecommerce_sales[pages_viewed] )
+		formatString: #,0.00
+
+	measure 'Avg Pages Buyers' = CALCULATE ( AVERAGE ( ecommerce_sales[pages_viewed] ), ecommerce_sales[purchased] = 1 )
+		formatString: #,0.00
+
+	measure 'Avg Pages Non-Buyers' = CALCULATE ( AVERAGE ( ecommerce_sales[pages_viewed] ), ecommerce_sales[purchased] = 0 )
+		formatString: #,0.00
+
+	measure 'Units Sold' = CALCULATE ( SUM ( ecommerce_sales[quantity] ), ecommerce_sales[purchased] = 1 )
+		formatString: #,0
+
+	measure 'Total Discount' = CALCULATE ( SUM ( ecommerce_sales[discount_amount] ), ecommerce_sales[purchased] = 1 )
+		formatString: #,0.00
+
+	measure 'Avg Discount %' = DIVIDE ( CALCULATE ( AVERAGE ( ecommerce_sales[discount_percent] ), ecommerce_sales[purchased] = 1 ), 100 )
+		formatString: 0.0%
+
+	measure 'Avg Rating (Purchases)' = CALCULATE ( AVERAGE ( ecommerce_sales[rating] ), ecommerce_sales[purchased] = 1 )
+		formatString: #,0.0
+
+	measure 'Low Rating Share' = ```
+			DIVIDE (
+			    CALCULATE ( COUNTROWS ( ecommerce_sales ), ecommerce_sales[purchased] = 1, ecommerce_sales[rating] <= 2 ),
+			    CALCULATE ( COUNTROWS ( ecommerce_sales ), ecommerce_sales[purchased] = 1 )
+			)
+			```
+		formatString: 0.0%
+
+	measure 'Revenue per Session' = DIVIDE ( [Total Revenue], [Total Sessions] )
+		formatString: #,0.00
+
+	measure 'Avg Revenue per Buyer' = DIVIDE ( [Total Revenue], [Buying Customers] )
+		formatString: #,0.00
+
+	measure 'Sessions per Customer' = DIVIDE ( [Total Sessions], [Unique Customers] )
+		formatString: #,0.00
+
+	measure 'Funnel Value' = ```
+			SWITCH (
+			    SELECTEDVALUE ( 'Funnel Stages'[Stage] ),
+			    "Sessions", [Total Sessions],
+			    "Added to Cart", [Add to Cart Sessions],
+			    "Purchased", [Total Purchases]
+			)
+			```
+		formatString: #,0
+
+	partition ecommerce_sales = m
+		mode: import
+		source =
+				let
+				    Source = Csv.Document(File.Contents(DataFile), [Delimiter=",", Columns=29, Encoding=65001, QuoteStyle=QuoteStyle.Csv]),
+				    #"Promoted Headers" = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),
+				    #"Changed Type" = Table.TransformColumnTypes(#"Promoted Headers",{
+				        {"customer_id", Int64.Type}, {"session_id", Int64.Type}, {"visit_date", type text}, {"device_type", Int64.Type}, {"user_type", Int64.Type}, {"marketing_channel", Int64.Type}, {"product_id", Int64.Type}, {"product_category", Int64.Type}, {"unit_price", type number}, {"quantity", Int64.Type}, {"discount_percent", Int64.Type}, {"discount_amount", type number}, {"revenue", type number}, {"pages_viewed", Int64.Type}, {"time_on_site_sec", Int64.Type}, {"added_to_cart", Int64.Type}, {"purchased", Int64.Type}, {"cart_abandoned", Int64.Type}, {"rating", Int64.Type}, {"review_text", Int64.Type}, {"review_helpful_votes", Int64.Type}, {"payment_method", Int64.Type}, {"visit_day", Int64.Type}, {"visit_month", Int64.Type}, {"visit_weekday", Int64.Type}, {"visit_season", Int64.Type}, {"session_duration_bucket", type text}, {"revenue_normalized", type number}, {"location", Int64.Type}
+				    }),
+				    #"Added Parsed Date" = Table.AddColumn(#"Changed Type", "visit_date_parsed", each Date.FromText([visit_date], [Format="dd-MM-yyyy", Culture="en-GB"]), type date),
+				    #"Removed Text Date" = Table.RemoveColumns(#"Added Parsed Date",{"visit_date"}),
+				    #"Renamed Parsed Date" = Table.RenameColumns(#"Removed Text Date",{{"visit_date_parsed", "visit_date"}})
+				in
+				    #"Renamed Parsed Date"
+
+	annotation PBI_ResultType = Table

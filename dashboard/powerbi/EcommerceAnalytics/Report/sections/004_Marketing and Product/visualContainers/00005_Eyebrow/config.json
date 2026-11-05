@@ -1,0 +1,71 @@
+{
+  "name": "d55ff997223a4d3dc829",
+  "layouts": [
+    {
+      "id": 0,
+      "position": {
+        "x": 32,
+        "y": 10,
+        "z": 1100,
+        "width": 620,
+        "height": 16,
+        "tabOrder": 1100
+      }
+    }
+  ],
+  "singleVisual": {
+    "visualType": "textbox",
+    "drillFilterOtherVisuals": true,
+    "objects": {
+      "general": [
+        {
+          "properties": {
+            "paragraphs": [
+              {
+                "textRuns": [
+                  {
+                    "value": "ECOMMERCE ANALYTICS  /  FY 2024",
+                    "textStyle": {
+                      "fontSize": "8pt",
+                      "color": "#22D3EE",
+                      "fontFamily": "Segoe UI Semibold",
+                      "fontWeight": "bold"
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "vcObjects": {
+      "background": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "visualHeader": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ]
+    }
+  }
+}
