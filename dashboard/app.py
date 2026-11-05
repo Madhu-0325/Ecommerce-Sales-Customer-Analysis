@@ -137,7 +137,7 @@ with st.sidebar:
         f"""
         <div class="sidebar-foot">
             <strong>{format_int(len(filtered))}</strong> of {format_int(len(df))} sessions selected<br>
-            Codes are labels only. The dataset has no code dictionary or currency.
+            Names marked * are inferred, not from the dataset. No currency is declared.
         </div>
         """,
         unsafe_allow_html=True,
@@ -161,7 +161,8 @@ with st.sidebar:
         )
         st.caption(
             "Revenue is shown in the dataset's native units because no currency is specified. "
-            "Numeric code columns are never assigned invented names."
+            "The dataset has no code dictionary, so category, device, channel, payment and "
+            "user-type names marked with * are inferred guesses, not official values."
         )
 
 if len(filtered) == 0:
@@ -183,7 +184,7 @@ st.markdown(
     <div class="app-footer">
         <span>E-Commerce Sales &amp; Customer Analysis</span>
         <span>Industrial Training Project &middot; Streamlit + Plotly</span>
-        <span>Revenue in dataset units &middot; Code columns are shown as stored</span>
+        <span>Revenue in dataset units &middot; Names marked * are inferred</span>
     </div>
     """,
     unsafe_allow_html=True,

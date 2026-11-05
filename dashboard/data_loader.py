@@ -26,6 +26,47 @@ CODE_COLUMNS = {
     "visit_season": "Season",
 }
 
+# The dataset ships without a data dictionary, so the names below are inferred
+# from common e-commerce conventions and the observed distributions. They are
+# marked with a trailing "*" in the UI to make clear they are not ground truth.
+INFERRED_CODE_LABELS = {
+    "device_type": {
+        0: "Desktop",
+        1: "Mobile",
+        2: "Tablet",
+    },
+    "user_type": {
+        0: "New visitor",
+        1: "Returning customer",
+    },
+    "marketing_channel": {
+        0: "Organic search",
+        1: "Paid search",
+        2: "Social media",
+        3: "Email",
+        4: "Referral",
+        5: "Direct",
+    },
+    "payment_method": {
+        0: "Credit card",
+        1: "Debit card",
+        2: "PayPal",
+        3: "Digital wallet",
+        4: "Net banking",
+        5: "Cash on delivery",
+    },
+    "product_category": {
+        0: "Electronics",
+        1: "Clothing",
+        2: "Home & kitchen",
+        3: "Beauty",
+        4: "Sports",
+        5: "Books",
+        6: "Toys",
+        7: "Grocery",
+    },
+}
+
 FLAG_COLUMNS = ["added_to_cart", "purchased", "cart_abandoned"]
 REVENUE_COLUMNS = ["unit_price", "quantity", "discount_percent", "discount_amount", "revenue"]
 ENGAGEMENT_COLUMNS = ["pages_viewed", "time_on_site_sec", "rating", "review_helpful_votes"]
@@ -233,9 +274,21 @@ def customer_table(df: pd.DataFrame) -> pd.DataFrame:
 
 
 def code_label(column: str, value) -> str:
-    """Human-readable label for an undecoded numeric code."""
+    """Human-readable label for a numeric code.
+
+    Labels ending in "*" are inferred guesses, not names supplied by the dataset.
+    """
+    if pd.isna(value):
+        return "Unknown"
+    try:
+        code = int(value)
+    except (TypeError, ValueError):
+        return str(value)
+    inferred = INFERRED_CODE_LABELS.get(column, {})
+    if code in inferred:
+        return f"{inferred[code]}*"
     prefix = CODE_COLUMNS.get(column, "Code")
-    return f"{prefix} {int(value)}" if pd.notna(value) else "Unknown"
+    return f"{prefix} {code}"
 
 
 def format_compact(value: float, decimals: int = 2) -> str:

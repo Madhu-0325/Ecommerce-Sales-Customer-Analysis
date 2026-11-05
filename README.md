@@ -97,8 +97,11 @@ count is reported in the sidebar under **Data quality notes**.
 
 - **One row = one website session**, not one order line.
 - Numeric code columns (`device_type`, `user_type`, `marketing_channel`, `product_category`,
-  `payment_method`, `location`, `visit_season`) are **codes without a data dictionary**. The
-  dashboard labels them as "Category 2", "Channel 5", etc., and never guesses real names.
+  `payment_method`, `location`, `visit_season`) have **no data dictionary**. For the five
+  business columns the dashboard shows readable names (e.g. "Mobile*", "Email*") that are
+  **inferred from common e-commerce conventions**, marked with a trailing `*`. They are not
+  official values. `location` and `visit_season` remain as raw codes. To use real names,
+  replace `INFERRED_CODE_LABELS` in `dashboard/data_loader.py`.
 - Revenue is displayed in the dataset's native units because no currency is declared.
 - Non-purchasing sessions all have `rating = 4`, so rating analysis uses purchasing sessions only.
 - `review_text` is a numeric value (0–10), not real review text, and is not presented as text.
